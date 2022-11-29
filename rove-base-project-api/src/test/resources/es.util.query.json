@@ -1,0 +1,566 @@
+GET coursedata-dev-22/_search?size=1000
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+
+GET coursedata-dev-22/_search?size=1000
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "multi_match": {
+            "query": "A20051",
+            "fields": [
+              "courseName",
+              "instName",
+              "instCourseCode",
+              "campusName",
+              "ascedCode1Desc",
+              "ascedCode2Desc"
+            ],
+            "fuzziness": "AUTO"
+          }
+        },
+        {
+          "term": {
+            "sectorName": {
+              "value": "HE"
+            }
+          }
+        }
+      ],
+      "filter": {
+        "term": {
+          "active": "true"
+        }
+      }
+    }
+  }
+}
+
+//inst id
+GET coursedata-dev-22/_search?size=1000
+{
+  "query": {
+    "bool": {
+
+      "filter": [
+        {
+          "term": {
+            "active": {
+              "value": true
+            }
+          }
+        },
+        {
+          "terms": {
+            "instId": [
+              "380"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+//asced 
+GET coursedata-dev-22/_search?size=1000
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "active": {
+              "value": true
+            }
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "terms": {
+                  "ascedCode1": [
+                    "03"
+                    ,"01"
+                  ]
+                }
+              },
+              {
+                "terms": {
+                  "ascedCode2": [
+                    "03"
+                    ,"01"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+
+// applyMethod
+
+GET coursedata-dev-22/_search?size=1000
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "terms": {
+            "applyMethod": [
+              "2",
+              "1"
+            ]
+          }
+        }
+      ],
+      "filter": {
+        "term": {
+          "active": "true"
+        }
+      }
+    }
+  }
+}
+
+//course type / student type - domestic or international
+// 1 domestic (course type <> 3) , 2 int (course type == 3)
+
+	////////// for international
+	
+	GET coursedata-dev-22/_search?size=1000
+	{
+	  "query": {
+	    "bool": {
+	      "must": [
+	        {
+	          "terms": {
+	            "courseType": [
+	              "3"
+	            ]
+	          }
+	        }
+	      ],
+	      "filter": {
+	        "term": {
+	          "active": "true"
+	        }
+	      }
+	    }
+	  }
+	}
+	
+	//////////// for domestic
+	
+	GET coursedata-dev-22/_search?size=1000
+	{
+	  "query": {
+	    "bool": {
+	      "must": [
+	        {
+	          "bool": {
+	            "must_not": [
+	              {
+	                "term": {
+	                  "courseType": {
+	                    "value": "3"
+	                  }
+	                }
+	              }
+	            ]
+	          }
+	        }
+	      ],
+	      "filter": {
+	        "term": {
+	          "active": "true"
+	        }
+	      }
+	    }
+	  }
+	}
+
+
+// studymode
+	//////// online
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		          "term": {
+		            "campusOnline": {
+		              "value": "true"
+		            }
+		          }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}	
+	
+	/////// fulltime
+	
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		          "term": {
+		            "fulltime": {
+		              "value": "true"
+		            }
+		          }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}
+	
+	/////// parttime
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		          "term": {
+		            "parttime": {
+		              "value": "true"
+		            }
+		          }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}
+	
+	/////// fulltime or parttime
+	
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		         "bool": {
+		           "should": [
+		             {
+		               "term": {
+		                 "fulltime": {
+		                   "value": "true"
+		                 }
+		               }
+		             },
+		             {
+		               "term": {
+		                 "parttime": {
+		                   "value": "true"
+		                 }
+		               }
+		             }
+		           ]
+		         }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}	
+	
+// sector / qualificationLevel
+   //// 4 - VET: Certificates, diplomas, advanced diplomas
+		
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		         "bool": {
+		           "should": [
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 4
+		                 }
+		               }
+		             },
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 5
+		                 }
+		               }
+		             }
+		           ]
+		         }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}   		
+   		
+   //// 1 -HE: Bachelor and associate degrees, diplomas, advanced diplomas
+   
+   
+
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		         "bool": {
+		           "should": [
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 1
+		                 }
+		               }
+		             },
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 5
+		                 }
+		               }
+		             },
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 6
+		                 }
+		               }
+		             }
+		           ]
+		         }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}   
+   
+   //// 3 - Graduate-Entry Teaching
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		         "bool": {
+		           "should": [
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 3
+		                 }
+		               }
+		             }
+		           ]
+		         }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}   
+   //// 9 - Graduate-Entry Other
+   
+   
+		GET coursedata-dev-22/_search?size=1000
+		{
+		  "query": {
+		    "bool": {
+		      "must": [
+		        {
+		         "bool": {
+		           "should": [
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 2
+		                 }
+		               }
+		             },
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 5
+		                 }
+		               }
+		             },
+		             {
+		               "term": {
+		                 "sectorId": {
+		                   "value": 6
+		                 }
+		               }
+		             }
+		           ]
+		         }
+		        }
+		      ],
+		      "filter": {
+		        "term": {
+		          "active": "true"
+		        }
+		      }
+		    }
+		  }
+		}   
+	
+	
+// atar range
+
+GET coursedata-dev-22/_search?size=1000
+{
+  "size": 10000,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "bool": {
+            "should": [
+              {
+                "bool": {
+                  "must_not": [
+                    {
+                      "exists": {
+                        "field": "lowestAtar"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "range": {
+                  "lowestAtar": {
+                    "from": 90,
+                    "to": 100,
+                    "include_lower": true,
+                    "include_upper": true,
+                    "boost": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "term": {
+            "active": {
+              "value": true,
+              "boost": 1
+            }
+          }
+        }
+      ],
+      "adjust_pure_negative": true,
+      "boost": 1
+    }
+  }
+}
+
+	
+// maximum date modified
+
+GET coursedata-dev-22/_search
+{
+  "aggs": {
+    "agg1": {
+      "max": {
+        "field": "dateModified"
+      }
+    }
+  },
+  "size": 0
+}
+
+// seach as you type for drop down suggestion
+GET coursedata-dev-23/_search?filter_path=aggregations
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "match_phrase_prefix": {
+            "courseName.search_as_you_type": "Mel"
+          }
+        },
+        {
+          "match_phrase_prefix": {
+            "instName.search_as_you_type": "Mel"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "aggs": {
+    "sug": {
+      "terms": 
+        {
+          "field": "courseName.keyword",
+          "size": 10,
+          "include": ".*Mel.*"
+        }
+      
+    },
+    "su1g": {
+      "terms": 
+        {
+          "field": "instName.keyword",
+          "size": 10,
+          "include": ".*Mel.*"
+          
+        }
+      
+    }  
+  }
+}

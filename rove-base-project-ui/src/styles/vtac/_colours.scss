@@ -1,0 +1,191 @@
+// colours
+.vtac-dark-blue {
+  color: $vtac-dark-blue;
+}
+.vtac-logo-blue {
+  color: $vtac-logo-blue;
+}
+.vtac-dark-grey {
+  color: $vtac-dark-grey;
+}
+.vtac-light-grey {
+  color: $vtac-light-grey;
+}
+.vtac-lime-green {
+  color: $vtac-lime-green;
+}
+.material-indigo {
+  color: #1a237e;
+}
+.material-wine {
+  color: #880e4f;
+}
+.material-cyan {
+  color: #00838f;
+}
+.material-blue {
+  color: #1976d2;
+}
+.material-bluegrey {
+  color: #546e7a;
+}
+.material-dark-bluegrey {
+  color: #455a64;
+}
+// mdb override
+.text-success {
+  color: #28a745 !important;
+}
+
+// backgrounds
+/// solid
+.bg-vtac-dark-grey {
+  background-color: $vtac-dark-grey;
+}
+.bg-vtac-dark-blue {
+  background-color: $vtac-dark-blue;
+}
+.bg-material-indigo {
+  background-color: $indigo-darken-4;
+}
+.bg-material-wine {
+  background-color: $pink-darken-4;
+}
+.bg-material-bluegrey {
+  background-color: $blue-grey-darken-2;
+}
+.bg-material-cyan {
+  background-color: $cyan-darken-4;
+}
+
+/// shades
+.bg-ultralight-shade-material-indigo {
+  background-color: $material-ultralight-indigo;
+}
+.bg-light-shade-material-indigo {
+  background-color: $indigo-lighten-5;
+}
+.bg-mid-shade-material-indigo {
+  background-color: $indigo-lighten-3;
+}
+.bg-ultralight-shade-material-wine {
+  background-color: $material-ultralight-wine;
+}
+.bg-light-shade-material-wine {
+  background-color: $pink-lighten-5;
+}
+.bg-mid-shade-material-wine {
+  background-color: $pink-lighten-3;
+}
+.bg-ultralight-shade-material-cyan {
+  background-color: $material-ultralight-cyan;
+}
+.bg-light-shade-material-cyan {
+  background-color: $cyan-lighten-5;
+}
+.bg-mid-shade-material-cyan {
+  background-color: $cyan-lighten-3;
+}
+.bg-ultralight-shade-material-bluegrey {
+  background-color: $material-ultralight-blue-grey;
+}
+.bg-light-shade-material-bluegrey {
+  background-color: $blue-grey-lighten-5;
+}
+.bg-mid-shade-material-bluegrey {
+  background-color: $blue-grey-lighten-3;
+}
+.bg-ultralight-shade-material-blue {
+  background-color: #e3f2fd;
+}
+
+/// misc
+.fat-footer {
+  background-color: #00204a !important;
+}
+.footer-copyright {
+  background-color: #007c87 !important;
+}
+
+// borders
+.border-vtac-dark-blue {
+  border-color: $vtac-dark-blue;
+}
+.border-material-indigo {
+  border-color: $indigo-darken-4;
+}
+.border-material-wine {
+  border-color: $pink-darken-4;
+}
+.card[class*="border"] {
+  &.border-material-wine {
+    border-color: $pink-darken-4;
+  }
+}
+.border-material-cyan {
+  border-color: $cyan-darken-4;
+}
+.card[class*="border"] {
+  &.border-material-cyan {
+    border-color: $cyan-darken-4;
+  }
+}
+span[class*="border"] {
+  &.border-material-bluegrey {
+    border-color: #90caf9 !important;
+  }
+}
+.border-material-bluegrey {
+  border-color: $blue-grey-darken-4;
+}
+.list-group-item {
+  &.bg-vtac-dark-blue {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+// badges
+
+.badge-material {
+  &.badge-cyan {
+    border: 1px #00bcd4 solid !important;
+    background-color: #00bcd4;
+    display: inline-block;
+  }
+  &.badge-bluegrey {
+    border: 1px #2196f3 solid !important;
+    background-color: #2196f3;
+    display: inline-block;
+  }
+  &.badge-indigo {
+    border: 1px #3f51b5 solid !important;
+    background-color: #3f51b5;
+    display: inline-block;
+  }
+  &.badge-grey {
+    border: 1px #616161 solid !important;
+    background-color: #616161;
+    display: inline-block;
+  }
+}
+
+/** CourseSearch **/
+.courselist {
+  background-color: #fdfdfd;
+}
+.courselist.he {
+  border-left: 0.3rem solid #009788;
+}
+.courselist.vet {
+  border-left: 0.3rem solid #0072bc;
+}
+.courselist.get {
+  border-left: 0.3rem solid #8e44ad;
+}
+.courselist.grad {
+  border-left: 0.3rem solid #d35400;
+}
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}

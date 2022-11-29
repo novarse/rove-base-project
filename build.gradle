@@ -1,0 +1,14 @@
+defaultTasks("clean", "war","deploy")
+
+task buildUi {
+   dependsOn ('proj2:build')
+}
+task buildApi {
+   dependsOn ('rove-base-project-api:build')
+   mustRunAfter(buildUi)
+}
+
+
+task build {
+   dependsOn (buildApi,buildUi)
+}

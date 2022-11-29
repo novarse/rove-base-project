@@ -1,0 +1,4 @@
+rootProject.name = 'rove-base-project-all'
+
+include 'rove-base-project-ui'
+include 'rove-base-project-api'

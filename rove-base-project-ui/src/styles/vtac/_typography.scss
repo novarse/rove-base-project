@@ -1,0 +1,619 @@
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+h1:first-of-type,
+h2:first-of-type,
+h3:first-of-type,
+h4:first-of-type,
+h5:first-of-type {
+  margin-top: 0.5rem;
+}
+
+h1 + h2:first-of-type,
+h2 + h3:first-of-type,
+h3 + h4:first-of-type,
+h4 + h5:first-of-type,
+h5 + h6:first-of-type {
+  margin-top: 1rem;
+}
+
+h1 {
+  font-family: $vtac-font-family;
+  padding: 0 0 15px 0;
+  &.application {
+    font-family: "Montserrat", sans-serif;
+    color: #002f6c;
+    position: absolute;
+    z-index: 12;
+  }
+}
+
+h3,
+.h3 {
+  color: #455a64;
+  font-family: $vtac-header-font-family;
+}
+
+h4,
+.h4 {
+  color: #002f6c;
+  font-family: $vtac-header-font-family;
+}
+
+h5 {
+  color: #0d47a1;
+}
+
+h6 {
+  color: #14868c;
+}
+
+body,
+p,
+td,
+ul li {
+  font-family: $vtac-font-family;
+}
+
+small {
+  font-size: 80%;
+}
+
+.bigger {
+  font-size: 130%;
+}
+
+.font-small {
+  font-size: 0.9rem;
+}
+
+.app-period {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  position: absolute;
+}
+
+.s-indigo {
+  h3 {
+    color: $indigo-lighten-1;
+  }
+
+  h4 {
+    color: $indigo-darken-4;
+  }
+}
+
+#heading {
+  h2 {
+    margin-top: 1.5rem;
+    font-family: "Montserrat", "Inter", sans-serif;
+  }
+}
+
+.s-wine {
+  h3 {
+    color: $pink-darken-2;
+  }
+
+  h4 {
+    color: $pink-darken-4;
+  }
+
+  h5 {
+    color: #7f5a78;
+  }
+}
+
+.s-cyan {
+  h3 {
+    color: $cyan-darken-2;
+  }
+
+  h4 {
+    color: $cyan-darken-4;
+  }
+}
+
+.s-bluegrey {
+  h3 {
+    color: $blue-grey-darken-2;
+  }
+
+  h4 {
+    color: $blue-grey-darken-4;
+  }
+}
+
+p {
+  &.instname {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    margin-top: -0.25rem !important;
+  }
+  &.preftags {
+    line-height: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+    .inst-image {
+      display: flex;
+      align-items: center;
+      img {
+        max-height: 60px;
+        max-width: 200px;
+      }
+    }
+    .inst-campus {
+      display: block;
+      margin: 0.5rem 0 0 0.25rem;
+      min-height: 50px;
+      .inst {
+        display: block;
+        font-weight: 700;
+      }
+      .campus {
+        display: block;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+#instCoursesList {
+  p {
+    .inst-campus {
+      margin: 0 0 -0.5rem 0;
+    }
+  }
+}
+
+/* links */
+
+a {
+  color: #005aff;
+  word-break: break-all;
+  &.material-icons {
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
+/* menu */
+
+.navbar-expand-xl {
+  .navbar-nav {
+    &.topnav {
+      .nav-item {
+        font-size: 0.8rem;
+      }
+    }
+
+    .nav-item {
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+    }
+  }
+}
+
+.navbar {
+  form {
+    .md-form {
+      input {
+        font-size: 0.8rem;
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 0;
+          left: 0;
+          bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+#hero {
+  h1 {
+    font-family: Montserrat, Inter, sans-serif;
+    letter-spacing: -2px;
+  }
+}
+
+.card {
+  .card-header {
+    margin-top: 0;
+  }
+
+  .card-title {
+    margin-top: 0;
+  }
+
+  &.courselist {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    h3 {
+      font-size: 1.2em;
+      font-family: "Montserrat", $vtac-font-family;
+      margin-top: 0.6rem;
+      font-weight: 700;
+    }
+  }
+
+  p {
+    font-size: 0.95em;
+  }
+
+  .card-body {
+    padding: 0.5em;
+
+    h3 {
+      &.card-title {
+        padding-top: 0.25em;
+        font-family: "Montserrat";
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+
+    li {
+      font-size: 0.93rem;
+
+      a {
+        color: #34495e;
+      }
+    }
+
+    label {
+      font-size: 0.93rem;
+      color: #34495e;
+      padding-left: 0.3rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  h1 {
+    &.application {
+      font-size: 1.9rem;
+      position: absolute;
+      top: 22px;
+      left: 235px;
+    }
+  }
+  .app-period {
+    top: 52px;
+    left: 235px;
+  }
+
+  #hero {
+    p {
+      &.highlight {
+        font-size: 130%;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #hero {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      &.highlight {
+        margin-top: -0.5rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  #hero {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      &.highlight {
+        margin-top: -0.5rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  h1 {
+    &.application {
+      font-size: 1.4rem;
+      position: absolute;
+      top: 16px;
+      left: 155px;
+    }
+  }
+  .app-period {
+    top: 46px;
+    left: 155px;
+  }
+  .card {
+    &.courselist {
+      h3 {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  p {
+    &.highlight {
+      font-size: 0.925rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  h1 {
+    &.application {
+      font-size: 1.8rem;
+      top: 90px;
+      left: 22px;
+    }
+  }
+  .app-period {
+    top: 120px;
+    left: 22px;
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  #hero {
+    .btn {
+      margin-top: 0;
+      font-size: 0.825rem;
+    }
+  }
+  .inst-image {
+    img {
+      max-width: 180px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #hero {
+    p {
+      &.highlight {
+        display: none;
+      }
+    }
+  }
+  .inst-image {
+    img {
+      max-width: 120px;
+    }
+  }
+}
+
+.guide-nav {
+  .nav-pills {
+    a {
+      color: #444;
+
+      &:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: #fff;
+        background-color: $vtac-dark-grey;
+
+        &:hover {
+          //color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/** CourseSearch **/
+#filters {
+  label {
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #000;
+  }
+}
+
+.coursegroup {
+  h2 {
+    font-size: 1.5em;
+    margin: 1rem 0 0.3rem 0;
+  }
+}
+
+#requirements {
+  th {
+    font-size: 80%;
+  }
+
+  td {
+    font-size: 80%;
+  }
+}
+
+/** Tour **/
+
+.popover.tour-tour .popover-body {
+  font-size: 0.925rem;
+}
+
+/** Preferences **/
+#pref-list {
+  h4 {
+    font-size: 1.2em;
+    font-family: $vtac-font-family;
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+#pref-filters {
+  label {
+    font-size: 0.9rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+
+  h5 {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #000;
+  }
+}
+
+.applied-filters {
+  white-space: nowrap;
+}
+
+/** Account:Preferences **/
+.pref-summary {
+  #pref-list {
+    h4 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    input[type="text"] {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.guidesections {
+  h2 {
+    font-size: 3.5em;
+    font-family: $vtac-font-family;
+    padding: 5px 0 15px 0;
+  }
+}
+
+.footer-copyright {
+  a {
+    font-weight: bold;
+  }
+}
+
+.fat-footer {
+  h2 {
+    font-size: 1.4em;
+    padding: 5px 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #aec9d7;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+// Blockquote (overrides)
+.blockquote {
+  padding: 0.5rem 1rem;
+  &.border-indigo {
+    border-left: 1rem solid $material-indigo;
+  }
+
+  &.border-wine {
+    border-left: 1rem solid $material-wine;
+  }
+
+  &.border-cyan {
+    border-left: 1rem solid $material-cyan;
+  }
+
+  &.border-bluegrey {
+    border-left: 1rem solid $material-bluegrey;
+  }
+
+  p,
+  ul li {
+    font-size: 0.85em;
+    padding: 0;
+    font-family: $vtac-header-font-family;
+  }
+}
+
+.categorybox {
+  .card {
+    .list-group-item {
+      padding: 0.5em 0.25em;
+    }
+  }
+}
+
+.material-icons {
+  vertical-align: middle;
+
+  &.md-18 {
+    font-size: 18px;
+  }
+
+  &.md-30 {
+    font-size: 30px;
+  }
+
+  &.md-36 {
+    font-size: 36px;
+  }
+
+  &.md-48 {
+    font-size: 48px;
+  }
+
+  &.md-60 {
+    font-size: 60px;
+  }
+
+  &.md-blue {
+    color: rgba(0, 123, 255, 1);
+  }
+
+  &.md-light {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+.dropdown-item {
+  font-size: 0.9375rem;
+  padding: 10px;
+}

@@ -1,0 +1,179 @@
+/* Bootstrap */
+@import '~bootstrap';
+
+/* Custom */
+@import 'variables';
+@import 'custom';
+
+@import 'dragula';
+
+html {
+  scroll-behavior: auto !important;
+}
+
+/*  bootstrap overrides */
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.125);
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+/* bootstrap overrides end */
+
+.no-decoration {
+  text-decoration: none !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.top-2 {
+  position: relative;
+  top: -2px;
+}
+
+.small-btn {
+  height: 23px;
+  border-radius: 5px;
+}
+
+.small-btn > span {
+  position: relative;
+  top: -10px;
+}
+
+.fs-1rem {
+  font-size: 1rem;
+}
+
+.mt-1rem {
+  margin-top: 1rem;
+}
+
+.tabs-to-pills {
+  .nav-tabs {
+    .nav-link {
+      margin: 0.5rem 0.5rem 0 0;
+      &.active {
+        border-radius: 0.25rem 0.25rem 0 0;
+        &:hover {
+          border-radius: 0.25rem 0.25rem 0 0;
+        }
+      }
+      &:hover {
+        border-radius: 0.25rem 0.25rem 0 0;
+      }
+    }
+  }
+}
+
+#searchBtn .input-group-text {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  position: relative;
+  top: 1px;
+  height: 40px;
+  border-color: #bebebe;
+}
+
+#clearSearchBtn .input-group-text {
+  border-radius: 0 !important;
+  position: relative;
+  top: 1px;
+  height: 40px;
+  border-color: #bebebe;
+  border-right-width: 0;
+}
+
+#kwSubmit, #kwSubmit:hover {
+  border-color: white;
+}
+
+.modal-header {
+  display: flex !important;
+  flex-shrink: 0 !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem 1rem !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  border-top-left-radius: calc(0.3rem - 1px) !important;
+  border-top-right-radius: calc(0.3rem - 1px) !important;
+}
+
+.modal-body {
+  //position: relative !important;
+  //flex: 1 1 auto !important;
+  padding: 0 1rem 0 1rem !important;
+}
+
+.modal-footer {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  flex-shrink: 0 !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding: 5px 1rem 0 0 !important;
+  border-top: 1px solid #dee2e6 !important;
+  border-bottom-right-radius: calc(0.3rem - 1px) !important;
+  border-bottom-left-radius: calc(0.3rem - 1px) !important;
+}
+
+#searchFilters .accordion-item .accordion-header button.accordion-button {
+  background-color: white;
+  color: black;
+}
+
+// ############# end of modification to Peter's styles ###################
+.grayed-out {
+  color: $vtac-light-grey !important;
+}
+
+.anchor {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.fav-text {
+  position: relative;
+  top: 1px;
+}
+
+.top-1px {
+  position: relative;
+  top: -1px;
+}
+
+.top2px {
+  position: relative;
+  top: 2px;
+}
+
+.slightly-bigger {
+  font-size: 120%;
+}
+
+.ok-toast {
+  background-color: green !important;
+}
+
+#accordionApplType .accordion-button, #accordionApplType .accordion-item {
+  background-color: #fafafa !important;
+}
+
+#accordionApplType .accordion-button:not(.collapsed) {
+  background-color: #e7f1ff !important;
+}
+
+.card {
+  position: relative;
+  border-radius: 4px;
+  background-color: white;
+  border-width: 0;
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  padding: 10px;
+}

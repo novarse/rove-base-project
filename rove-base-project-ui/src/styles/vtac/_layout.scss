@@ -1,0 +1,228 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  display: table;
+  width: 100%;
+}
+
+main {
+  min-height: calc(100vh - 300px);
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fafafa;
+}
+
+.tabs-to-pills {
+  .tab-content {
+    .tab-pane {
+      border: 1px solid #dee2e6;
+      padding: 1rem;
+      border-radius: 0 0 0.25rem 0.25rem !important;
+    }
+  }
+}
+
+body > footer {
+  display: table-row;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  color: #fff;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .fat-footer {
+    padding-bottom: 18px;
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  .masthead {
+    .btn {
+      padding-left: 0.9rem;
+      padding-right: 0.9rem;
+      min-width: 100px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .tabs-to-accordion {
+    .accordion-item {
+      //border: none;
+      .accordion-header {
+        display: none;
+      }
+      .responsive.collapse {
+        display: block;
+      }
+    }
+  }
+
+  #admission {
+    .accordion-item {
+      //border: none;
+      .accordion-header {
+        display: block;
+      }
+    }
+  }
+
+  .fat-footer {
+    position: relative;
+    background-image: url("../../assets/images/circles-footer.png"),
+      url("../../assets/images/outlines-hero.png");
+    background-position: 0% 70%, right bottom;
+    background-size: 60%, 20%;
+    background-repeat: no-repeat, no-repeat;
+    h2 {
+      position: relative;
+      z-index: 2;
+    }
+
+    li {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .connect {
+    img {
+      position: relative;
+      z-index: 2;
+      height: 35px;
+      width: 35px;
+      margin: 0 0.5rem;
+
+      &.bg {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  .fat-footer {
+    position: relative;
+
+    h2 {
+      position: relative;
+      z-index: 2;
+    }
+
+    li {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .tabs-to-accordion {
+    .nav-tabs {
+      display: none;
+    }
+
+    .tab-pane {
+      display: block !important;
+      opacity: 1;
+    }
+  }
+  .tabs-to-pills {
+    .nav-tabs {
+      border-bottom: none;
+      margin-bottom: 0.5rem;
+      .nav-link {
+        margin: 0.25rem;
+        &.active {
+          color: #fff;
+          background-color: #0d6efd;
+          border: 0;
+          border-radius: 0.25rem;
+          &:hover {
+            background-color: #0d6efd;
+            border: 1px solid #0d6efd;
+            border-radius: 0.25rem;
+          }
+        }
+        &:hover {
+          background-color: #fff;
+          border: 1px solid #efefef;
+          border-radius: 0.25rem;
+        }
+      }
+    }
+  }
+  .fat-footer {
+    .connect {
+      img {
+        height: 30px;
+        width: 30px;
+        margin: 0 0.5rem;
+
+        &.bg {
+          height: 35px;
+          width: 35px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  .masthead {
+    padding: 0;
+
+    .btn {
+      padding: 0.3rem 0.3rem;
+    }
+  }
+}
+
+.categorybox {
+  &.col-sm-6 {
+    padding: 5px;
+  }
+
+  &.col-lg-4 {
+    padding: 5px;
+  }
+
+  .card {
+    height: 100%;
+  }
+}
+
+/** Account **/
+#summary {
+  .actions-only {
+    display: none;
+  }
+}
+
+/** CourseSearch **/
+.courselist {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+#favouritesdiv {
+  .courselist {
+    cursor: move;
+  }
+}
+
+.coursesummary {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}

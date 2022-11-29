@@ -1,0 +1,232 @@
+/* CSS Document */
+@media print {
+  * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    &::after {
+      text-shadow: none !important;
+      box-shadow: none !important;
+    }
+    &::before {
+      text-shadow: none !important;
+      box-shadow: none !important;
+    }
+  }
+  body {
+    color: #000;
+    background: #fff;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    min-width: 992px !important;
+  }
+  h1 {
+    color: #000;
+    background: none;
+    font-size: 20px;
+    page-break-after: avoid;
+    &.application {
+      left: 120px;
+    }
+  }
+  nav {
+    display: none;
+    &.navbar {
+      display: none;
+    }
+  }
+  section {
+    &#heading {
+      display: none;
+    }
+  }
+  aside {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    page-break-before: always;
+    float: none;
+    a {
+      font-weight: bolder;
+      text-decoration: none;
+      &:link {
+        &:after {
+          content: " <" attr(href) "> ";
+        }
+        &.course-link {
+          &:after {
+            content: " <https://coursesearch.vtac.edu.au/" attr(href) "> " !important;
+          }
+        }
+        &.inst {
+          &:after {
+            content: " <https://coursesearch.vtac.edu.au/" attr(href) "> " !important;
+          }
+        }
+      }
+      &.material-icons {
+        display: none;
+      }
+      &.opentab {
+        display: none;
+      }
+    }
+  }
+  @page {
+    margin: 2cm;
+  }
+  h2 {
+    page-break-after: avoid;
+    font-size: 18px;
+    &.d-print-block {
+      margin-top: 2rem;
+    }
+  }
+  h3 {
+    page-break-after: avoid;
+    font-size: 15px;
+    a {
+      &:link {
+        &:after {
+          content: " <" attr(href) "> ";
+          display: block;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  p {
+    font-size: 12px;
+  }
+  td {
+    font-size: 12px;
+  }
+  ul {
+    li {
+      font-size: 12px;
+    }
+    page-break-inside: avoid;
+  }
+  ol {
+    li {
+      font-size: 12px;
+    }
+    page-break-inside: avoid;
+  }
+  h4 {
+    font-size: 14px;
+  }
+  h5 {
+    font-size: 13px;
+  }
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    &.circle-white {
+      display: none !important;
+    }
+    &.instlogo {
+      max-width: 300px !important;
+      margin-bottom: 3rem;
+    }
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+  pre {
+    white-space: pre-wrap !important;
+    border: 1px solid #adb5bd;
+    page-break-inside: avoid;
+  }
+  blockquote {
+    border: 1px solid #adb5bd;
+    page-break-inside: avoid;
+  }
+  .card {
+    width: 90%;
+    page-break-inside: avoid;
+  }
+  .badge {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+    td {
+      background-color: #fff !important;
+    }
+    th {
+      background-color: #fff !important;
+    }
+  }
+  .table-bordered {
+    td {
+      border: 1px solid #dee2e6 !important;
+    }
+    th {
+      border: 1px solid #dee2e6 !important;
+    }
+  }
+  .table-dark {
+    color: inherit;
+    tbody {
+      + {
+        tbody {
+          border-color: #dee2e6;
+        }
+      }
+    }
+    td {
+      border-color: #dee2e6;
+    }
+    th {
+      border-color: #dee2e6;
+    }
+    thead {
+      th {
+        border-color: #dee2e6;
+      }
+    }
+  }
+  .tab-content {
+    .tab-pane {
+      display: block;
+      &.fade:not(.show) {
+        opacity: 1;
+      }
+    }
+  }
+  .accordion-item {
+    .collapse {
+      display: block !important;
+      height: auto;
+    }
+  }
+  #keywordFilters {
+    .material-icons {
+      display: none;
+    }
+  }
+  #searchFilters {
+    display: none;
+  }
+  #sortorder {
+    display: none;
+  }
+  label[for="sortorder"] {
+    display: none;
+  }
+  #coursesList {
+    .justify-content-end {
+      justify-content: flex-start !important;
+    }
+  }
+}
